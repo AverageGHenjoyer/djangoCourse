@@ -15,8 +15,7 @@ monthly_challenges = {
     "september" : "Learn Django for at least 20 minutes every day!",
     "october": "Learn Django for at least 20 minutes every day!",
     "november": "Learn Django for at least 20 minutes every day!",
-    "december": "Learn Django for at least 20 minutes every day!"
-    
+    "december": None
 }
 
 # Create your views here.
@@ -41,7 +40,7 @@ def monthly_challenge(request, month):
         challenge_text = monthly_challenges[month]
         return render(request, "challenges/challenge.html", {
             "text": challenge_text,
-            "month": month
+            "month_name": month
             })
     except:
         return HttpResponseNotFound("<h1>This month is not supported!</h1>")
